@@ -6,7 +6,7 @@ public class EE308_LAB5 {
 	int grade=sc.nextInt();
 	System.out.println("please input the question num");
 	int questionNum=sc.nextInt();
-	if(grade==1||grade==2) { // lxy
+	if(grade==1||grade==2) { // hwf
 		int []judge= new int[questionNum];
 		for(int i=0;i<questionNum;i++) {
 				int rightAns=addLess100();
