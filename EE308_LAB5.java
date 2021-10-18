@@ -1,5 +1,5 @@
 import java.util.*;
-public class EE308_LAB5 {
+public class EE308_LAB5 {//zyhzjbs
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -29,8 +29,8 @@ public class EE308_LAB5 {
 		}else if(grade==5||grade==6) {
 			int []judge= new int[questionNum];
 			for(int i=0;i<questionNum;i++) {
-				String rightAns=randomChoose();
-				String ans=sc.next();
+				double rightAns=randomChoose();
+				double ans=sc.nextInt();
 				if(ans==rightAns)
 					judge[i]=1;
 			}
@@ -64,45 +64,41 @@ public class EE308_LAB5 {
 		System.out.printf(num1+" + "+num2+"=?");
 		return num1+num2;
 	}
-	public static String add() {
+	public static double add() {
 		double numa,numb;
 		numa=creatRandomNum(0,10000);
 		numb=creatRandomNum(0,10000-(int)numa);
 		String num1 = String.format("%.2f",numa);
 	    String num2 = String.format("%.2f",numb);
 		System.out.println(num1+" + "+num2+"=?");
-		String ans = String.format("%.2f",numa+numb);
-		return ans;
+		return numa+numb;
 	}
-	public static String sub() {
+	public static double sub() {
 		double numa,numb;
 		numa=creatRandomNum(0,10000);
 		numb=creatRandomNum(0,10000);
 		String num1 = String.format("%.2f",numa);
 	    String num2 = String.format("%.2f",numb);
 		System.out.println(num1+" - "+num2+"=?");
-		String ans = String.format("%.2f",numa-numb);
-		return ans;
+		return numa-numb;
 	}
-	public static String mul() {
+	public static double mul() {
 		double numa,numb;
 		numa=creatRandomNum(0,10000);
 		numb=creatRandomNum(0,10000);
 		String num1 = String.format("%.2f",numa);
 	    String num2 = String.format("%.2f",numb);
 		System.out.println(num1+" * "+num2+"=?");
-		String ans = String.format("%.2f",numa*numb);
-		return ans;
+		return numa*numb;
 	}
-	public static String div() {
+	public static double div() {
 		double numa,numb;
 		numa=creatRandomNum(0,10000);
 		numb=creatRandomNum(0,10000);
 		String num1 = String.format("%.2f",numa);
 	    String num2 = String.format("%.2f",numb);
 		System.out.println(num1+" / "+num2+"=?");
-		String ans = String.format("%.2f",numa/numb);
-		return ans;
+		return numa/numb;
 	}
 	
 	////////
@@ -143,14 +139,13 @@ public class EE308_LAB5 {
 				score+=100/(double)arrLen;
 			}
 		}
-		String sco = String.format("%.2f",score);
-		System.out.println(sco+" points");;
+		System.out.println(score+" points");;
 	}
 //	public static void judge(int num) {
 //		int []question= new int[num];
 //		
 //	}
-	public static String randomChoose() {
+	public static double randomChoose() {
 		int num=(int)creatRandomNum(1,4);
 		if(num==1) {
 			return add();
@@ -162,7 +157,7 @@ public class EE308_LAB5 {
 			return div();
 		}else {
 			System.out.println("WRONG");
-			return " ";
+			return 0;
 		}
 	}
 	public static int randomChooseNoDecimal() {
